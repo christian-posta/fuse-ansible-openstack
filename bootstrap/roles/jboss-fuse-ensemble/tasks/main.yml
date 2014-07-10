@@ -5,7 +5,7 @@
   command: chdir=/opt creates=/opt/fuse-6.1 /usr/bin/unzip jboss-fuse-6.1.zip -d fuse-6.1
 
 - name: Create symbolic link
-  command: chdir=/opt /bin/ln -snf fuse-6.1/jboss-fuse-6.1.0.redhat-379 fuse
+  command: chdir=/opt creates=/opt/fuse /bin/ln -snf fuse-6.1/jboss-fuse-6.1.0.redhat-379 fuse
 
 - name: Add group fuse
   group: name=fuse state=present

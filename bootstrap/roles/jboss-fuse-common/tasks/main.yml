@@ -9,4 +9,7 @@
     - telnet
     - which
     - java-1.7.0-openjdk-devel.x86_64
-   
+
+- name: Ensure /etc/hosts set up properly
+  sudo: yes
+  lineinfile: dest=/etc/hosts regexp='.*{{ ansible_default_ipv4.address }}.*' line='{{ ansible_default_ipv4.address }}   {{ ansible_hostname }}'   
