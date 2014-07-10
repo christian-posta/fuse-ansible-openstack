@@ -1,0 +1,12 @@
+---
+- name: Install prerequisites
+  sudo: yes  
+  yum: name={{item}} state=present
+  with_items:
+    - man-pages
+    - unzip
+    - screen
+    - telnet
+    - which
+    - java-1.7.0-openjdk-devel.x86_64
+   
