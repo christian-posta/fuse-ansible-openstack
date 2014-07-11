@@ -16,3 +16,9 @@
 - name: Change ownership of fuse installation
   file: path=/opt/fuse-6.1 owner=fuse group=fuse state=directory recurse=yes
 
+- name: Create directories for keys
+  command: chdir=/opt /bin/mkdir keys
+
+- name: Install private key for accessing other nodes in the cluster
+  copy: src=redhat.pem dest=/opt/keys/redhat.pem group=fuse owner=fuse
+
